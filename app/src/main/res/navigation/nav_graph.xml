@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/contactsHome">
+
+    <fragment
+        android:id="@+id/contactsHome"
+        android:name="com.example.ContactAppFragments.ContactsHome"
+        android:label="fragment_contacts_home"
+        tools:layout="@layout/fragment_contacts_home" >
+        <action
+            android:id="@+id/action_contactsHome_to_contactsUpdate"
+            app:destination="@id/contactsUpdate" />
+        <action
+            android:id="@+id/action_contactsHome_to_newContactFragement"
+            app:destination="@id/newContactFragement" />
+    </fragment>
+    <fragment
+        android:id="@+id/contactsUpdate"
+        android:name="com.example.ContactAppFragments.ContactsUpdate"
+        android:label="fragment_contacts_update"
+        tools:layout="@layout/fragment_contacts_update" >
+        <argument
+            android:name="Contact"
+            app:argType="com.example.ContactsApp.room.Contact"
+            app:nullable="false"
+            />
+        <action
+            android:id="@+id/action_contactsUpdate_to_contactsHome"
+            app:destination="@id/contactsHome" />
+    </fragment>
+    <fragment
+        android:id="@+id/newContactFragement"
+        android:name="com.example.ContactAppFragments.NewContactFragement"
+        android:label="fragment_new_contact_fragement"
+        tools:layout="@layout/fragment_new_contact_fragement" >
+        <action
+            android:id="@+id/action_newContactFragement_to_contactsHome"
+            app:destination="@id/contactsHome" />
+    </fragment>
+</navigation>

@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+   >
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/NewToolBar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#E0CB61"
+            android:title="New Contact"
+            android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:titleTextColor="@android:color/white" />
+
+        <TextView
+            android:id="@+id/notWantToUpdate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Cancel"
+            android:textColor="#105313"
+            android:textSize="16sp"
+            android:clickable="true"
+            android:layout_gravity="start"
+            android:padding="16dp"
+            app:layout_constraintStart_toStartOf="@id/NewToolBar"
+            app:layout_constraintTop_toTopOf="@id/NewToolBar"
+            app:layout_constraintBottom_toBottomOf="@id/NewToolBar"/>
+
+        <TextView
+            android:id="@+id/contactUpdated"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Done"
+            android:textColor="#105313"
+            android:textSize="16sp"
+            android:clickable="true"
+            android:layout_gravity="end"
+            android:padding="16dp"
+            app:layout_constraintEnd_toEndOf="@id/NewToolBar"
+            app:layout_constraintTop_toTopOf="@id/NewToolBar"
+            app:layout_constraintBottom_toBottomOf="@id/NewToolBar"/>
+
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/NewContactImage"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:src="@drawable/ic_profile"
+        app:civ_border_width="2dp"
+        app:civ_border_color="#FF000000"
+        app:layout_constraintTop_toBottomOf="@id/NewToolBar"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="16dp"
+    />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fab_new_photo"
+        android:layout_width="56dp"
+        android:layout_height="56dp"
+        android:contentDescription="@string/app_name"
+        android:padding="8dp"
+        android:src="@drawable/ic_camera"
+        app:backgroundTint="@color/white"
+        app:fabSize="normal"
+        app:layout_constraintBottom_toBottomOf="@id/NewContactImage"
+        app:layout_constraintEnd_toEndOf="@id/NewContactImage"
+        app:layout_constraintTop_toBottomOf="@id/NewContactImage"
+        app:rippleColor="?attr/colorControlHighlight" />
+
+    <!-- Name field -->
+
+    <TextView
+        android:id="@+id/text_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginTop="44dp"
+        android:text="Name"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/NewContactImage" />
+
+    <EditText
+        android:id="@+id/edit_name"
+        android:layout_width="240dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginVertical="32dp"
+        android:layout_marginTop="16dp"
+
+        android:hint="Name"
+        android:inputType="textPersonName"
+
+        android:minHeight="48dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/NewContactImage" />
+
+    <!-- Phone field -->
+
+    <!-- Company field -->
+
+    <TextView
+        android:id="@+id/text_phone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginTop="56dp"
+        android:text="Phone"
+        android:textSize="18dp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/edit_name" />
+
+    <EditText
+        android:id="@+id/edit_phone"
+        android:layout_width="240dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginTop="40dp"
+        android:hint="Phone"
+        android:inputType="phone"
+        android:minHeight="48dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/edit_name" />
+
+    <TextView
+        android:id="@+id/emailText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginTop="56dp"
+        android:text="Email"
+        android:textSize="18dp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/edit_phone" />
+
+    <!-- Title field -->
+
+    <EditText
+        android:id="@+id/edit_Email"
+        android:layout_width="240dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginTop="40dp"
+        android:hint="Email"
+        android:inputType="text"
+        android:minHeight="48dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/edit_phone" />
+
+
+    <!-- Groups field -->
+
+    <TextView
+        android:id="@+id/companyText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginTop="56dp"
+        android:text="Company"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/edit_Email" />
+
+    <EditText
+        android:id="@+id/edit_company"
+        android:layout_width="240dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginTop="40dp"
+        android:hint="Company"
+        android:inputType="text"
+        android:minHeight="48dp"
+
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/edit_Email" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
